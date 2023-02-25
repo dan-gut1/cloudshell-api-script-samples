@@ -8,6 +8,7 @@ from typing import List
 from cloudshell.api.cloudshell_api import CloudShellAPISession, ResourceInfo
 from dataclasses import dataclass
 
+result = []
 
 @dataclass
 class ConnectionData:
@@ -22,7 +23,6 @@ def _recursive_get_connections(children_resources: List[ResourceInfo]):
     :param connections_list:
     :return:
     """
-    result = []
     for resource in children_resources:
         connections = resource.Connections
         children = resource.ChildResources
